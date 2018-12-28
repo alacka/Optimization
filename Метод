@@ -1,0 +1,12 @@
+function modify_jquery() {
+            if (!is_admin()) {           
+// Убираем подключенную старую версию библиотеки
+                wp_deregister_script('jquery');
+            }
+}
+add_action('init', 'modify_jquery');
+
+
+- Lazy Load Optimizer
+- Autoptimize - html js css
+- WP Fastest Cache - Сжатие HTML - Компрессия Gzip - Кэш в браузере - Отключить эмодзи
