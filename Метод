@@ -7,6 +7,6 @@ function modify_jquery() {
 add_action('init', 'modify_jquery');
 
 
-- Lazy Load Optimizer
+- a3 Lazy Load или Lazy Load Optimizer
 - Autoptimize - html js css
 - WP Fastest Cache - Сжатие HTML - Компрессия Gzip - Кэш в браузере - Отключить эмодзи
