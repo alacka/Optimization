@@ -15,7 +15,22 @@ ExpiresByType application/x-icon "access plus 6 month"
 
 
 
+add_filter('script_loader_tag', 'add_async_attribute', 10, 2);
 
+function add_async_attribute($tag, $handle)
+{
+    if(!is_admin()){
+        if ('jquery-core' == $handle) {
+            return $tag;
+        }
+        return str_replace(' src', ' defer src', $tag);
+    }else{
+        return $tag;
+    }
+
+
+
+}
 
 
 
