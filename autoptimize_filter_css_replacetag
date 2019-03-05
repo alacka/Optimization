@@ -1,0 +1,35 @@
+add_filter('autoptimize_filter_css_replacetag','sdudchenko_css_replacetag',10,1);
+function sdudchenko_css_replacetag($replacetag) {
+	return array("</body>","before");
+	}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+// отключаем
+remove_action( 'wp_head',   'wp_print_styles',          8 );
+remove_action( 'wp_head',   'wp_print_head_scripts',    9 );
+remove_action( 'wp_footer', 'wp_print_footer_scripts', 20 );
+
+// пере-подключаем
+add_action( 'my_print_stsc', 'wp_print_styles' );
+add_action( 'my_print_stsc', 'wp_print_head_scripts' );
+add_action( 'my_print_stsc', 'wp_print_footer_scripts' );
+
+// добавляем событие в функцию нашу...
+function the_my_js_css(){
+	// бал бла бла...
+
+	do_action('my_print_stsc');
+}
+
+
+function your_function() {
+    echo '<p>foo</p>';
+}
+add_action('wp_footer', 'your_function');
