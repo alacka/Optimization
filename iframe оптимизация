@@ -1,0 +1,12 @@
+<iframe allowfullscreen="" lazy-load="<?php the_field('ssylka_na_ifrejm'); ?>" frameborder="0"></iframe>
+
+<script>
+$( window ).load(function() {
+	setTimeout(function (){
+
+	var iframeurl = $('iframe').attr('lazy-load');
+	$('iframe').attr('src', iframeurl);
+	
+	}, 2000);
+});
+</script>
